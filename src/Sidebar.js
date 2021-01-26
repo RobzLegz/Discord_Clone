@@ -49,8 +49,8 @@ function Sidebar() {
                     <AddIcon onClick={addChannelHan} className="sidebar-addChannel" />
                 </div>
                 <div className="channels-list">
-                    {channels.map((channel) => (
-                        <Channel />
+                    {channels.map(({id, channel}) => (
+                        <Channel key={id} id={id} channelName={channel.channelName} />
                     ))}
                 </div>
             </div>

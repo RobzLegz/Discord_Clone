@@ -7,8 +7,9 @@ export const appSlice = createSlice({
     channelName: null,
   },
   reducers: {
-    setChannelId: (state, action) => {
-      state.app += action.payload;
+    setChannelInfo: (state, action) => {
+      state.channelId = action.payload.channelId;
+      state.channelName = action.payload.channelName;
     },
     logout: (state) => {
       state.user = null;
@@ -16,7 +17,7 @@ export const appSlice = createSlice({
   },
 });
 
-export const {setChannelId} = appSlice.actions;
+export const {setChannelInfo} = appSlice.actions;
 
 export const selectChannelId = (state) => state.app.channelId;
 

@@ -7,11 +7,19 @@ import SendIcon from '@material-ui/icons/Send';
 import GifIcon from '@material-ui/icons/Gif';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import Message from './Message';
+import { useSelector } from 'react-redux';
+import { selectChannelId, selectChannelName } from './features/counter/appSlice';
+import { selectUser } from './features/counter/userSlice';
 
 function Chat() {
+
+    const channelId = useSelector(selectChannelId);
+    const user = useSelector(selectUser);
+    const channelName = useSelector(selectChannelName);
+
     return (
         <div className="chat-container">
-            <ChatHeader />
+            <ChatHeader channelName={channelName}/>
             <div className="chat-messages">
                 <Message />
             </div>
