@@ -17,4 +17,4 @@ function Channel({id, channelName}) {
     )
 }
 
-export default Channel
+export default Channel;
